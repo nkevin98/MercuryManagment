@@ -3,8 +3,9 @@
 db.collection("Users").onSnapshot(function (snapshot) {
   snapshot.docChanges().forEach(function (change) {
     if (change.type === "added") {
+      //get latest updates
       const data = change.doc.data();
-
+      //fetch relavant data
       const message = data.messageSent;
       const timeStamp = data.timeStamp;
       const user = data.UserID;
