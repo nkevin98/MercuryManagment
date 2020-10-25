@@ -15,7 +15,7 @@
 	  <label>Provide UserID </label>
 	  <br>
     <textarea id="textbox"> </textarea>
-    <button id="myBtn">Try it</button>
+    <button id="myBtn">Delete</button>
     <script>
       document.getElementById("myBtn").addEventListener("click", function() {
         db.collection("Users").doc(textBox.value).delete();
