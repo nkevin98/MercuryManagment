@@ -4,37 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MercuryManager</title>
-
     <!-- Imports -->
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
-
     <!-- Link to CSS -->
-    <link rel="stylesheet" type="text/css" href="./style.css">
-
-    <!-- Link to CSS -->
-    <link rel="stylesheet" type="text/css" href="./style.css">
-
+    <link rel="stylesheet" type="text/css" href="./style.css"> q
   </head>
-
   <body>
     <!-- Input -->
 	  <label>Provide UserID </label>
 	  <br>
     <textarea id="textbox"> </textarea>
     <button id="myBtn">Try it</button>
-
     <script>
       document.getElementById("myBtn").addEventListener("click", function() {
         db.collection("Users").doc(textBox.value).delete();
         alert("Deleting" + textBox.value);
       });
     </script>
-
-
-    <!-- Options -->
-
-
+    <!-- Fields -->
     <table id="table" style="width: 80%">
       <tr>
         <th>UserId</th>
@@ -63,6 +51,6 @@
       var database = firebase.firestore();
     </script>
   </body>
-  <script src="app.js"></script>
-
+  <script src ="app.js"></script>
+  <script src="../test/test.js"></script>
 </html>
