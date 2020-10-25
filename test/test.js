@@ -11,6 +11,8 @@ db.collection("Users").onSnapshot(function (snapshot) {
 
       if(!message){
           console.log(user + " did not recieve a message");
+      }else{
+          console.log(user + " was added at: " + timeStamp);
       }
     }
   });
