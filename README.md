@@ -103,4 +103,6 @@ Speaking about JavaScript testing frameworks, Selenium WebDriver is certainly th
 5.) PUPPETEER:
 Puppeteer is another Node.js based automated testing library which provides an API that helps the users to control Chrome by overriding the standard DevTools protocol. Many scenarios which can be done manually in the browser can be automated with the help of Puppeteer.
 
+6.) No test framework(Just plain javascript checks): Instead of using frameworks, javascript files can bue used to monitor the database in real time and send alerts if messages aren't sent, users are not added, etc..
+
 https://www.lambdatest.com/blog/top-javascript-automation-testing-framework/
