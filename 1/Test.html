@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <h1><center>Test UI</center></h1>
+
+    <!-- Imports -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+    <body>
+        <center>
+        <!-- Input -->
+        <textarea id="textbox1"> </textarea>
+        
+        <!-- Options -->
+        <form>
+          <div id="options">
+
+            <div><input id="discord" value="Discord" type="checkbox" name="Discord" onclick="myFunction()"/> <label for="Discord"> Discord</label></div>
+    
+            <div><input id="slack" value="Slack" type="checkbox" name="Slack" onclick="myFunction()"/> <label for="Slack"> Slack</label></div>
+    
+            <div><input id="whatsapp" value="WhatsApp" type="checkbox" name="WhatsApp" onclick="myFunction()"/> <label for="WhatsApp"> WhatsApp</label></div>
+    
+            <div><input id="messenger" value="Messenger" type="checkbox" name="Messenger" onclick="myFunction()"/> <label for="Messenger"> Messenger</label></div>
+    
+            <div><input id="sms" value="SMS" type="checkbox" name="SMS" onclick="myFunction()"/> <label for="SMS"> SMS</label></div>
+    
+            <input id="phone_number" type="text" placeholder="Phone Number" disabled />
+
+          </div>
+        </form>
+
+        <!-- Send Now -->
+        <input id="button" type="button" value="Send Now"/>
+    </center>
+
+
+
+    <script src="script.js"></script>
+  </body>
+
+</html>

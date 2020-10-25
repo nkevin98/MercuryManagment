@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercury Management</title>
+    <h1><center>Mercury Management AdminUI</center></h1>
+    <center><h2><a href ="Test.html">Test UI</a></h2></center>
+
+    <!-- Imports -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <!--Delete user manually by userID-->
+    <script language = "javascript" type = "text/text/javascript">
+      function delete(){
+        database.collection("messages").where("UserID", "==", textBox1.value)
+          .get()
+          .then(function(querySnapshot) {
+              querySnapshot.forEach(function(doc) {
+                  // doc.data() is never undefined for query doc snapshots
+                  database.collection("messages").doc(doc.id).delete().then(function() {
+                      console.log("Document successfully deleted!");
+                  }).catch(function(error) {
+                      console.error("Error removing document: ", error);
+                  });
+              });
+          })
+          .catch(function(error) {
+              console.log("Error getting documents: ", error);
+          });
+      }
+    </script>
+  </head>
+
+  <!-- Input -->
+	<label>Provide UserID </label>
+  <br>
+  <textarea id="textbox1"> </textarea>
+  
+   <!-- Options -->
+   <form>
+    <div id="options">
+      <div><input id="button" value="Edit" type="button" name="Edit" />
+          <label for="button"></label></div>
+      <div><input id = "DeleteButton" type = "button" name = "button" value = "Delete User" onclick = "delete()">
+        </div>
+    </div>
+  </form>
+  
+  <center>
+  <body>
+    <table id="table" style="width: 100%">
+      <tr>
+        <th>UserId</th>
+        <th>Services Requested</th>
+        <th>Phone Number</th>
+        <th>Date Scheduled</th>
+        <th>Message sent</th>
+        <th>Message timestamp</th>
+      </tr>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</center>
+</html>
