@@ -1,0 +1,117 @@
+
+#header{
+  text-align: center;
+}
+
+.logo{
+  margin-top: 10px;
+  border: 5px solid black;
+}
+
+.logo:hover {
+  transform: scale(1.10);
+}
+label{
+  color: white;
+}
+
+#textuser{
+  text-align: center;
+  justify-self: auto;
+  margin: auto;
+  align-items: center;
+}
+
+.textBox{
+  opacity: 60%;
+  width: 500px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#buttons{
+  text-align: center;
+  justify-self: auto;
+  margin: auto;
+  align-items: center;
+  color: white;
+  
+}
+
+#addBtn{
+  border: 2px solid black;
+  width: 100px;
+  height: 55px;
+  border-radius: 10%;
+  background: rgb(117, 214, 117);
+}
+
+#addBtn:hover{
+  background: rgb(49, 158, 49);
+}
+
+#scheduleBtn{
+  border: 2px solid black;
+  width: 100px;
+  height: 55px;
+  border-radius: 10%;
+  background: rgb(153, 208, 228);
+}
+
+#scheduleBtn:hover{
+  background: rgb(42, 162, 202);
+}
+
+#delBtn{
+  border: 2px solid black;
+  width: 100px;
+  height: 55px;
+  border-radius: 10%;
+  background: lightcoral;
+}
+
+#delBtn:hover{
+  background: rgb(230, 72, 72);
+}
+
+#table {
+  font-family: "Arial", Arial, Arial, Arial;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table td,
+#table th {
+  border: 4px solid #030303;
+  padding: 10px;
+}
+
+body {
+  background-color: grey;
+  background-image: url("images/background.jpg");
+  background-size: 100%;
+}
+
+#table tr:nth-child(even) {
+  background-color: white;
+}
+
+#table tr:nth-child(odd) {
+  background-color: white;
+}
+
+
+/* used js to do this
+#table tr:hover {
+  background-color: rgba(0, 217, 255, 0.979);
+  transform: translate(33px,0);
+}
+*/
+
+#table th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.849);            /* title bar */
+  color: rgb(4, 246, 206);
+}

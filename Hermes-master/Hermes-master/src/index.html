@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MercuryManager</title>
+    <!-- Imports -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyDid7YOy0CFaaEPSZl97i7FOfklx4gKYbo",
+    authDomain: "test-firestore-database.firebaseapp.com",
+    databaseURL: "https://test-firestore-database.firebaseio.com",
+    projectId: "test-firestore-database",
+    storageBucket: "test-firestore-database.appspot.com",
+    messagingSenderId: "727593281671",
+    appId: "1:727593281671:web:1f765f3f4900efd6327022",
+    measurementId: "G-S1XGHC9GHF"
+  };
+  // Initialize Firebase
+  const ref = firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var db = ref.firestore();
+  var database = ref.firestore();
+</script>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+
+  <body>
+    <!-- Input -->
+    <div id="header">
+      <img src="images/logo.png" class="logo"> 
+      
+      <!--
+        <label>Mercury Messenger Database</label>
+      -->
+    </div>
+  
+    <br>
+   
+    <div id="textuser">
+      <textarea id="textbox" class="textBox" placeholder="Enter User"></textarea>
+    </div>
+    
+    <div id="buttons">
+      <button id="addBtn">Add</button>
+      <button id= "scheduleBtn">Edit</button>
+      <button id="delBtn">Delete</button>
+    </div>
+
+    <br>
+
+    <script>
+      document.getElementById("textbox").addEventListener("keyup", (event) =>{
+        const box = event.target.value;
+        const tableData = document.getElementById("table");
+        const users = Array.from(tableData.rows);
+        users.slice(1,users.length).forEach(function(row){
+          const uid = row.id;
+          console.log(uid+"UID")
+          if(uid.indexOf(box) == 0){
+            console.log(box+uid.indexOf(box))
+            row.style.display = "table-row";
+          }else{
+            console.log(uid.indexOf(textBox.value) + box)
+            row.style.display = "none";
+          }
+        });
+      });
+
+
+    </script>
+    <script>
+      document.getElementById("scheduleBtn").addEventListener("click", function() {
+        var date =prompt("What date would you like?","mm/dd/yy");
+        var serv =prompt("Service", "facebook, discord, sms");
+        var ph =prompt("Phone number","(###)###-####");
+
+        const uid = db.collection("Users").doc(textBox.value)
+        if (date!=null && typeof(uid) != "undefined"){
+          db.collection("Users").doc(textBox.value).set({UserID: textBox.value,services: serv, phone: ph, AppointmentDate: date})
+        }else{
+          alert("Invalid User");
+        }
+      });
+    </script>
+    <script>
+      document.getElementById("addBtn").addEventListener("click", function() {
+        db.collection("Users").doc(textBox.value).set({UserID: textBox.value});
+        alert("Adding " + textBox.value);
+      });
+    </script>
+    <script>
+      document.getElementById("delBtn").addEventListener("click", function() {
+        db.collection("Users").doc(textBox.value).delete();
+        alert("Deleting " + textBox.value);
+      });
+    </script>
+    <!-- Fields -->
+    <table id="table" style="width: 100%">
+      <tr class="toprow">
+        <th>UserId</th>
+        <th>Services Requested</th>
+        <th>Phone Number</th>
+        <th>Date Scheduled</th>
+        <th>Message sent</th>
+        <th>Message</th>
+        <th>Channel</th>
+        <th>Webhook</th>
+        <th>DiscordId</th>
+        <th>Discord recipients</th>
+        <th>Discord Password</th>
+        <th>SlackId</th>
+        <th>Slack Password</th>
+        <th>Date/time On Request</th>
+        <th>Instant message content</th>
+        <th>Instant message date</th> 
+      </tr>
+    </table>
+
+  </body>
+  <script src ="app.js"></script>
+  <script src="../test/test.js"></script>
+  </html>
