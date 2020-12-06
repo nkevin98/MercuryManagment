@@ -84,6 +84,7 @@ label{
 #table th {
   border: 4px solid #030303;
   padding: 10px;
+  word-wrap:break-word;
 }
 
 body {
