@@ -1,20 +1,22 @@
 
 #header{
   text-align: center;
+  opacity: 100%;
 }
 
 .logo{
   margin-top: 10px;
-  border: 5px solid black;
 }
 
-.logo:hover {
-  transform: scale(1.10);
-}
 label{
   color: white;
 }
 
+#table{
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+}
 #textuser{
   text-align: center;
   justify-self: auto;
@@ -22,6 +24,67 @@ label{
   align-items: center;
 }
 
+.user{
+  width: 180px;
+}
+
+.service{
+  width: 200px;
+}
+
+.phone{
+  width: 180px;
+}
+
+.date{
+  width: 150px;
+}
+
+.ms{
+  width: 150px;
+}
+
+.message{
+  width: 330px;
+}
+.channel{
+  width: 120px;
+}
+
+.web{
+  width: 300px;
+}
+
+.discordRec{
+  width: 200px;
+}
+.discordId{
+  width: 200px;
+}
+
+.discordPass{
+  width: 200px;
+}
+
+.slackId{
+  width: 170px;
+}
+
+.slackPass{
+  width: 180px;
+}
+
+.time{
+  width: 200px;
+}
+
+.imc{
+  width: 350px;
+}
+
+.imd{
+  width: 200px;
+}
 .textBox{
   opacity: 60%;
   width: 500px;
@@ -76,6 +139,7 @@ label{
 
 #table {
   font-family: "Arial", Arial, Arial, Arial;
+  font-size: 12px;
   border-collapse: collapse;
   width: 100%;
 }
@@ -84,7 +148,6 @@ label{
 #table th {
   border: 4px solid #030303;
   padding: 10px;
-  word-wrap:break-word;
 }
 
 body {

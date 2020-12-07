@@ -51,7 +51,7 @@ db.collection("Users").onSnapshot(function (snapshot) {
       nodeSlackPswd.innerHTML += data.SlackPassword;
       nodeOnRequest.innerHTML += data.currentTime + data.currentDate;
       nodeImContent.innerHTML += data.imContent;
-      nodeImDate.innerHTML += data.nodeImDate;
+      nodeImDate.innerHTML += data.imDate;
     
 
       //add new nodes q

@@ -41,19 +41,19 @@
   <body>
     <!-- Input -->
     <div id="header">
-      <img src="images/logo.png" class="logo">
-
+      <img src="images/logo1.png" class="logo"> 
+      
       <!--
         <label>Mercury Messenger Database</label>
       -->
     </div>
-
+  
     <br>
-
+   
     <div id="textuser">
       <textarea id="textbox" class="textBox" placeholder="Enter User"></textarea>
     </div>
-
+    
     <div id="buttons">
       <button id="addBtn">Add</button>
       <button id= "scheduleBtn">Edit</button>
@@ -79,9 +79,8 @@
           }
         });
       });
-
-
     </script>
+    
     <script>
       document.getElementById("scheduleBtn").addEventListener("click", function() {
         var date =prompt("What date would you like?","mm/dd/yy");
@@ -89,6 +88,7 @@
         var ph =prompt("Phone number","(###)###-####");
 
         const uid = db.collection("Users").doc(textBox.value)
+        console.log(uid)
         if (date!=null && typeof(uid) != "undefined"){
           db.collection("Users").doc(textBox.value).set({UserID: textBox.value,services: serv, phone: ph, AppointmentDate: date})
         }else{
@@ -109,28 +109,28 @@
       });
     </script>
     <!-- Fields -->
-    <table id="table" style=" table-layout: fixed; width: 100%">
+    <table id="table" style="width: 100%">
       <tr class="toprow">
-        <th>UserId</th>
-        <th>Services Requested</th>
-        <th>Phone Number</th>
-        <th>Date Scheduled</th>
-        <th>Message sent</th>
-        <th>Message</th>
-        <th>Channel</th>
-        <th>Webhook</th>
-        <th>DiscordId</th>
-        <th>Discord recipients</th>
-        <th>Discord Password</th>
-        <th>SlackId</th>
-        <th>Slack Password</th>
-        <th>Date/time On Request</th>
-        <th>Instant message content</th>
-        <th>Instant message date</th>
+        <th class="user">UserId</th>
+        <th class="service">Services</th>
+        <th class="phone">Phone <br> Number</th>
+        <th class="date">Date <br> Scheduled</th>
+        <th class="ms">Message <br> sent</th>
+        <th class="message">Message</th>
+        <th class="channel">Channel</th>
+        <th class="web">Webhook</th>
+        <th class="discordId">DiscordId</th>
+        <th class="discordRec">Discord <br> recipients</th>
+        <th class="discordPass">Discord <br> Password</th>
+        <th class="slackId">SlackId</th>
+        <th class="slackPass">Slack <br> Password</th>
+        <th class="time">Date/time <br> On Request</th>
+        <th class="imc">Instant <br> message content</th>
+        <th class="imd">Instant <br> message date</th>
       </tr>
     </table>
 
   </body>
   <script src ="app.js"></script>
   <script src="../test/test.js"></script>
-  </html>
+</html>
